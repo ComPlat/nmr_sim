@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Declare your gem's dependencies in nmr_sim.gemspec.
+# Declare your gem"s dependencies in nmr_sim.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
@@ -11,5 +11,29 @@ gemspec
 # your gem to rubygems.org.
 
 # To use a debugger
-# gem 'byebug', group: [:development, :test]
+# gem "byebug", group: [:development, :test]
 
+gem "jquery-rails"
+gem "jquery-hotkeys-rails"
+gem "jquery-ui-rails"
+
+gem "oauth2"
+gem "attr_encrypted"
+#gem "openbabel", "2.3.2.1", github: "cubuslab/openbabel-gem"
+#gem "rubabel", git: "git://github.com/awayanyway/rubabel.git"
+
+gem "browserify-rails"
+#gem "pundit"
+
+#API
+gem "grape"
+gem "hashie-forbidden_attributes"
+gem "grape-active_model_serializers"
+gem "kaminari"
+gem "grape-kaminari"
+
+gem "rspec-rails"
+gem "factory_girl_rails"
+
+# data integrity
+gem "paranoia", "~> 2.0"
