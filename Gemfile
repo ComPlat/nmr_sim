@@ -13,12 +13,12 @@ gemspec
 # To use a debugger
 # gem "byebug", group: [:development, :test]
 
-gem "jquery-rails"
-gem "jquery-hotkeys-rails"
-gem "jquery-ui-rails"
+#gem "jquery-rails"
+#gem "jquery-hotkeys-rails"
+#gem "jquery-ui-rails"
 
-gem "oauth2"
-gem "attr_encrypted"
+#gem "oauth2"
+#gem "attr_encrypted"
 #gem "openbabel", "2.3.2.1", github: "cubuslab/openbabel-gem"
 #gem "rubabel", git: "git://github.com/awayanyway/rubabel.git"
 
@@ -37,3 +37,6 @@ gem "factory_girl_rails"
 
 # data integrity
 gem "paranoia", "~> 2.0"
+
+# test
+gem "webmock"
