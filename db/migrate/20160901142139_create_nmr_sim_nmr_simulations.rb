@@ -2,8 +2,8 @@ class CreateNmrSimNmrSimulations < ActiveRecord::Migration
   def change
     create_table :nmr_sim_nmr_simulations do |t|
       t.integer :molecule_id
-      t.text :response_1h
-      t.text :response_13c
+      t.text :path_1h
+      t.text :path_13c
       t.text :source
       t.datetime :deleted_at
 

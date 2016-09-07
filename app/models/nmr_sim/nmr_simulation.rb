@@ -4,23 +4,51 @@ module NmrSim
     attr_accessor :molfile
     belongs_to :molecule, class_name: "Molecule"
 
-    before_validation :retrieve_1h, :retrieve_13c
+    before_validation :grasp_1h, :grasp_13c
 
     def result
-      { response_1h: response_1h, response_13c: response_13c }
+      { response_1h: read(path_1h), response_13c: read(path_13c) }
     end
 
     private
-      def retrieve_1h
-        self.response_1h = nmrdb[:response_1h] unless response_1h
+      def grasp_1h
+        if !path_1h && data[:response_1h]
+          self.path_1h = compose_and_save("1h", data[:response_1h])
+        end
       end
 
-      def retrieve_13c
-        self.response_13c = nmrdb[:response_13c] unless response_13c
+      def grasp_13c
+        if !path_13c && data[:response_13c]
+          self.path_13c = compose_and_save("13c", data[:response_13c])
+        end
+      end
+
+      def data
+        send(source)
       end
 
       def nmrdb
         @nmrdb ||= Simulation::Nmrdb.new(molfile: molfile).fetch
+      end
+
+      def compose_and_save(type, json)
+        file_name = generate_filename(type)
+        File.open(file_path + "/" + file_name, 'w') { |file| file.write(json) }
+        file_name
+      end
+
+      def generate_filename(type)
+        filenames = { source: source, type: type, molfile: molecule.molfile, time: Time.current }
+        key_base = "#{filenames.to_a.flatten.join}"
+        Digest::SHA256.hexdigest(key_base) + '.json'
+      end
+
+      def file_path
+        File.join(Rails.root, 'public', 'simulations', "#{source}")
+      end
+
+      def read(file_name)
+        file_name ? File.open(file_path + "/" + file_name) : nil
       end
   end
 end

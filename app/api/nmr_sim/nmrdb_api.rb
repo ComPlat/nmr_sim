@@ -24,7 +24,7 @@ module NmrSim
       def completed(simulation, molecule_id)
         if !simulation
           return create_simulation(molecule_id)
-        elsif !simulation.response_1h || !simulation.response_13c
+        elsif !simulation.path_1h || !simulation.path_13c
           return update_simulation(simulation, molecule_id)
         else
           return simulation
