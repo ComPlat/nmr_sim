@@ -5,6 +5,7 @@ module NmrSim
     belongs_to :molecule, class_name: "Molecule"
 
     before_validation :grasp_1h, :grasp_13c
+    validates :molecule_id, uniqueness: { scope: :source }
 
     def result
       { response_1h: read(path_1h), response_13c: read(path_13c) }

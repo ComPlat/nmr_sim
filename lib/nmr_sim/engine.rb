@@ -23,9 +23,9 @@ module NmrSim
 
       # create associations for main app.
       Molecule.class_eval do
-        has_one :nmr_simulation, class_name: NmrSimulation,
-                foreign_key: "molecule_id",
-                dependent: :destroy
+        has_many :nmr_simulations, class_name: NmrSimulation,
+                                   foreign_key: "molecule_id",
+                                   dependent: :destroy
       end
     end
   end

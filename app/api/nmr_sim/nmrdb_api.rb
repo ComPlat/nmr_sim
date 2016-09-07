@@ -33,7 +33,7 @@ module NmrSim
 
       def create_simulation(molecule_id)
         molecule = Molecule.find(molecule_id)
-        simulation = molecule.build_nmr_simulation(source: "nmrdb", molfile: molecule.molfile)
+        simulation = molecule.nmr_simulations.create(source: "nmrdb", molfile: molecule.molfile)
         simulation.save && simulation
       end
 
