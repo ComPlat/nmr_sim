@@ -74,8 +74,8 @@ export default class SampleDetailsTab extends React.Component {
         <ListGroup>
           <ListGroupItem bsStyle={style}>
             Sorry, the {type} simulation is not available now. Please check directly on
-            <a target="_blank" href="http://www.nmrdb.org/">
-              <img src="http://www.nmrdb.org/images/logo.jpg" alt="" width="80" />
+            <a target="_blank" href="https://www.nmrdb.org/">
+              <img src="https://www.nmrdb.org/images/logo.jpg" alt="" width="80" />
             </a>
           </ListGroupItem>
         </ListGroup>
