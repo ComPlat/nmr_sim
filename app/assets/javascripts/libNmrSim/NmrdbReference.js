@@ -31,6 +31,6 @@ const LinkToNmrdb = () => {
 export { ViewAtNmrdb, LinkToNmrdb };
 
 ViewAtNmrdb.propTypes = {
-  is13C: React.PropTypes.string,
+  is13C: React.PropTypes.bool,
   smile: React.PropTypes.string,
 };
