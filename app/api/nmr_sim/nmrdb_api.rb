@@ -24,7 +24,7 @@ module NmrSim
       def completed(simulation, molecule_id)
         if !simulation
           return create_simulation(molecule_id)
-        elsif !simulation.path_1h || !simulation.path_13c
+        elsif simulation.invalid_file
           return update_simulation(simulation, molecule_id)
         else
           return simulation
@@ -33,13 +33,13 @@ module NmrSim
 
       def create_simulation(molecule_id)
         molecule = Molecule.find(molecule_id)
-        simulation = molecule.nmr_simulations.create(source: "nmrdb", molfile: molecule.molfile)
+        simulation = molecule.nmr_simulations.create(source: "nmrdb")
         simulation.save && simulation
       end
 
       def update_simulation(simulation, molecule_id)
         molecule = Molecule.find(molecule_id)
-        simulation.update_attributes(source: "nmrdb", molfile: molecule.molfile) && simulation
+        simulation.update_attributes(source: "nmrdb") && simulation
       end
     end
 
