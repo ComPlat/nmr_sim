@@ -1,0 +1,10 @@
+{
+  "SampleDetails": {
+    "Tabs": {
+      "0": {
+        "content": "SampleDetailsTab",
+        "title": "SampleDetailsTabName"
+      }
+    }
+  }
+}
