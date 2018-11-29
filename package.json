@@ -10,7 +10,7 @@
     "browserify-incremental": "^3.1.1",
     "d3": "^3.5.15",
     "jcampconverter": "^2.6.0",
-    "react-bootstrap": "~0.30.2",
+    "react-bootstrap": "~0.32.4",
     "prop-types": "^15.6.2"
   },
   "browserify": {
@@ -30,8 +30,6 @@
     ]
   },
   "devDependencies": {
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0",
     "babel-core": "^6.5.0",
     "babel-loader": "^6.2.4",
     "babel-polyfill": "^6.5.0",
@@ -50,11 +48,17 @@
     "expect-jsx": "^2.6.0",
     "sinon": "^1.17.3",
     "enzyme": "^2.2.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-addons-test-utils": "^15.0.0",
     "jsdom": "^8.3.1",
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "@kadira/storybook": "^2.5.2",
     "git-url-parse": "^6.0.1"
+  },
+  "peerDependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "scripts": {
     "lint": "eslint app/assets/javascripts",
