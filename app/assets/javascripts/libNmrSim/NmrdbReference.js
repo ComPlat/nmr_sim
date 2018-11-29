@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ViewAtNmrdb = ({ is13C, smile }) => {
   const nmrdbLink = is13C
@@ -31,6 +32,6 @@ const LinkToNmrdb = () => {
 export { ViewAtNmrdb, LinkToNmrdb };
 
 ViewAtNmrdb.propTypes = {
-  is13C: React.PropTypes.bool,
-  smile: React.PropTypes.string,
+  is13C: PropTypes.bool,
+  smile: PropTypes.string,
 };
