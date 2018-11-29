@@ -78,7 +78,7 @@ GEM
       railties (>= 3.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    grape (1.0.3)
+    grape (1.2.1)
       activesupport
       builder
       mustermann-grape (~> 1.0.0)
@@ -208,7 +208,7 @@ DEPENDENCIES
   browserify-rails
   bundler (~> 1.10)
   factory_girl_rails
-  grape (~> 1.0.3)
+  grape (>= 1.1.0)
   grape-active_model_serializers
   grape-kaminari
   hashie-forbidden_attributes
