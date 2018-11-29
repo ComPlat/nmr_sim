@@ -28,7 +28,7 @@ gem "browserify-rails"
 gem 'nokogiri', '~> 1.8.2'
 
 #API
-gem 'grape', '~>1.0.3'
+gem "grape", '>= 1.1.0'
 gem "hashie-forbidden_attributes"
 gem "grape-active_model_serializers"
 gem "kaminari"
