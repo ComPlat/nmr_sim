@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, ButtonToolbar, ListGroup, ListGroupItem } from 'react-bootstrap';
+import PropTypes from 'prop-types';
+
 import NmrSimActions from './actions/NmrSimActions';
 import NmrSimStore from './stores/NmrSimStore';
 import LineChartWrapper from './LineChartWrapper';
@@ -117,5 +119,5 @@ export default class SampleDetailsTab extends React.Component {
 }
 
 SampleDetailsTab.propTypes = {
-  sample: React.PropTypes.object,
+  sample: PropTypes.object,
 };

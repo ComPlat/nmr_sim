@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { LineChart } from './LineChart';
 
 export default class LineChartWrapper extends React.Component {
@@ -35,6 +36,6 @@ export default class LineChartWrapper extends React.Component {
 }
 
 LineChartWrapper.propTypes = {
-  data: React.PropTypes.array,
-  type: React.PropTypes.string,
+  data: PropTypes.array,
+  type: PropTypes.string,
 };
