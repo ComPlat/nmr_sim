@@ -4,33 +4,44 @@ import PropTypes from 'prop-types';
 import { LineChart } from './LineChart';
 
 export default class LineChartWrapper extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.d3Ref = React.createRef();
+  }
+
   componentDidMount() {
+    const node = this.d3Ref.current;
+
     LineChart.create({
       data: this.props.data,
       type: this.props.type,
-      el: this.getDOMNode(),
+      el: node,
     });
   }
 
   componentWillReceiveProps(nextProps) {
+    const node = this.d3Ref.current;
+
     LineChart.update({
       data: nextProps.data,
       type: nextProps.type,
-      el: this.getDOMNode(),
+      el: node,
     });
   }
 
   componentWillUnmount() {
-    LineChart.destroy(this.getDOMNode());
-  }
+    const node = this.d3Ref.current;
 
-  getDOMNode() {
-    return ReactDOM.findDOMNode(this);
+    LineChart.destroy(node);
   }
 
   render() {
     return (
-      <div className="nmr-chart" />
+      <div
+        className="nmr-chart"
+        ref={this.d3Ref}
+      />
     );
   }
 }
