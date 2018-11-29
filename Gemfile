@@ -25,8 +25,10 @@ gemspec
 gem "browserify-rails"
 #gem "pundit"
 
+gem 'nokogiri', '~> 1.8.2'
+
 #API
-gem "grape"
+gem 'grape', '~>1.0.3'
 gem "hashie-forbidden_attributes"
 gem "grape-active_model_serializers"
 gem "kaminari"
