@@ -25,7 +25,7 @@ gemspec
 gem "browserify-rails"
 #gem "pundit"
 
-gem 'nokogiri', '~> 1.8.2'
+gem 'nokogiri', '~> 1.10.10'
 
 #API
 gem "grape", '>= 1.1.0'
