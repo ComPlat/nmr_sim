@@ -25,14 +25,14 @@ gemspec
 gem "browserify-rails"
 #gem "pundit"
 
-gem 'nokogiri', '~> 1.8.2'
+gem 'nokogiri', '~> 1.11', '>= 1.11.7'
 
 #API
-gem "grape", '>= 1.1.0'
+gem 'grape', '~> 1.5', '>= 1.5.3'
 gem "hashie-forbidden_attributes"
 gem "grape-active_model_serializers"
 gem "kaminari"
-gem "grape-kaminari"
+gem 'grape-kaminari', '~> 0.4.1'
 
 gem "rspec-rails"
 gem "factory_girl_rails"
